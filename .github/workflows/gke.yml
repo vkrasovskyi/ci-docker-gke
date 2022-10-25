@@ -81,7 +81,7 @@ jobs:
     - name: Deploy
       run: |-
         # replacing the image name in the k8s template
-        #cd ./kube
+        cd ./kube
         ls -ltr
         ./kustomize edit set image sharks/web-app:latest=$IMAGE:$GITHUB_SHA
         ./kustomize build . | kubectl apply -f -
