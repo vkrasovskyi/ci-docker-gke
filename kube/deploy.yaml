@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webapp-dpl
+  name: webapp-dpl
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webapp-dpl
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webapp-dpl
+    spec:
+      containers:
+      - image: sharks/web-app:latest
+        name: webapp
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
