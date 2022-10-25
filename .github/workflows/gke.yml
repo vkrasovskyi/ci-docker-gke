@@ -14,7 +14,7 @@ name: Build and Deploy to GKE
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "main" ]
 
 env:
   PROJECT_ID: kube-ml-365607
