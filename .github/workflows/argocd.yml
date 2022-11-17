@@ -55,7 +55,7 @@ jobs:
 
     - uses: actions/checkout@v3
       with:
-        repository: https://github.com/vkrasovskyi/argo_kube
+        repository: vkrasovskyi/argo_kube
         ref: 'master'
         token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
     - name: setup git config
