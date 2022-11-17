@@ -51,6 +51,18 @@ jobs:
       run: docker login --username sharks --password ${{ secrets.PASS_DOCKHUB }}
     - name: push dockerhub
       run: docker image push sharks/web-app:$GITHUB_SHA
+      
+
+    - uses: actions/checkout@v3
+      with:
+        repository: https://github.com/vkrasovskyi/argo_kube
+        ref: 'master'
+        token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+    - name: setup git config
+      run: |
+        git config user.name "vkrasovskyi"
+        git config user.email "vkrasovskyi@yahoo.com"
+        git push origin master
 
 
  
